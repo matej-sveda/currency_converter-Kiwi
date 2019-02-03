@@ -1,6 +1,8 @@
-# Importing modules
-from forex_python.converter import CurrencyRates, CurrencyCodes
+from flask import Flask, jsonify, request
 import json
+from forex_python.converter import CurrencyRates, CurrencyCodes
+
+app = Flask(__name__)
 
 # Creating instances of classes from forex-python module
 currency_rates = CurrencyRates()
@@ -10,8 +12,12 @@ currency_codes = CurrencyCodes()
 with open('currencies_supported.json') as file:
     data = json.load(file)
 
-# Convert function with arguments input_currency, output currency and amount
-def convert(amount, input_currency, output_currency=None):
+@app.route('/convert', methods=['GET'])
+def convert():
+    amount = request.args.get('amount', type=float)
+    input_currency = request.args.get('input_currency')
+    output_currency = request.args.get('output_currency', default=None)
+
     if output_currency is None:
         for currency in data:
             if currency['symbol'] == input_currency:
@@ -25,6 +31,18 @@ def convert(amount, input_currency, output_currency=None):
                 output_currency = currency['cc']
         output = currency_rates.convert(input_currency, output_currency, amount)
 
-    return (output)
+    result = {
+        "input": {
+            "amount": amount,
+            "currency": input_currency
+        },
 
-print(convert(1, 'CZK', 'USD'))
+        "output": {
+            output_currency: output
+        }
+    }
+
+    return jsonify(result)
+
+if __name__ == '__main__':
+    app.run(debug=True)
