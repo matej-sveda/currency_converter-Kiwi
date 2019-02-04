@@ -7,7 +7,7 @@ Supporting 33 most popular world currencies.
 
 ### Prerequisites
 
-Project was build and tested on Ubuntu with Python 3.5.2, using following modules:
+Project was build and tested on Ubuntu 16.04 with Python 3.5.2, using following modules:
 
 - flask 1.0.2
 - argparse 1.4.0
