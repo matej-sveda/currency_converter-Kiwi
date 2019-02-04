@@ -109,6 +109,6 @@ GET /currency_converter?amount=10.92&input_currency=£ HTTP/1.1
 
 ## Authors
 
-* **Matej Sveda** - *Initial work* - [matej-sveda](https://github.com/matej-sveda)
+* **Matej Sveda** - [matej-sveda](https://github.com/matej-sveda)
 
 See also the list of [contributors](https://github.com/matej-sveda/currency_converter-Kiwi/graphs/contributors)
