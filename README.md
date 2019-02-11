@@ -7,7 +7,7 @@ Supporting 33 most popular world currencies.
 
 ### Prerequisites
 
-Project was build and tested on Ubuntu with Python 3.5.2, using following modules:
+Project was build and tested on Ubuntu 16.04 with Python 3.5.2, using following modules:
 
 - flask 1.0.2
 - argparse 1.4.0
@@ -109,11 +109,6 @@ GET /currency_converter?amount=10.92&input_currency=£ HTTP/1.1
 
 ## Authors
 
-* **Matej Sveda** - *Initial work* - [matej-sveda](https://github.com/matej-sveda)
+* **Matej Sveda** - [matej-sveda](https://github.com/matej-sveda)
 
 See also the list of [contributors](https://github.com/matej-sveda/currency_converter-Kiwi/graphs/contributors)
-
-
-## Acknowledgments
-
-This project was created as a task for a job application
