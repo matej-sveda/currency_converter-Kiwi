@@ -117,8 +117,6 @@ $python cli.py --amount 0.9 --input_currency ¥ --output_currency AUD | jq
 }
 ```
 ```
-./cli.py --amount 10.92 --input_currency £ | jq
-=======
 $python cli.py --amount 10.92 --input_currency £ | jq
 {
     "input": {
