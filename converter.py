@@ -10,7 +10,7 @@ def error_msg(type, msg):
     return json.dumps(err)
 
 def local_currency_file():
-    with open('currencies_supported.json') as data:
+    with open('currencies_supported.json', encoding='utf8') as data:
         return json.load(data)
 
 def check_currency(user_input):
